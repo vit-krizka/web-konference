@@ -1,14 +1,92 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="cs">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chytrá administrativa – Domů</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+<header>
+    <div class="nav-bar">
+        <div class="logo">
+            <div class="pixel-badge" aria-hidden="true"></div>
+            <span>Chytrá administrativa</span>
+        </div>
+        <nav aria-label="Hlavní menu">
+            <ul>
+                <li><a href="index.html">Domů</a></li>
+                <li><a href="program.html">Program</a></li>
+                <li><a href="recnici.html">Řečníci</a></li>
+                <li><a href="misto.html">Místo</a></li>
+                <li><a href="prakticke.html">Praktické info</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<main>
+    <section class="hero">
+        <div>
+            <p>10. 1. 2025 · 10:00 – 14:00 · Vilemína, Anežský klášter</p>
+            <h1>Konference Chytrá administrativa</h1>
+            <p>Setkání advokacie, státní správy a byznysu nad budoucností českého eGovernmentu. Přijďte sdílet, jak může umělá inteligence, blockchain a lepší práce s daty posunout služby státu.</p>
+            <a class="button" href="prakticke.html">Zjistit, jak se přihlásit</a>
+        </div>
+        <div class="grid-panel">
+            <h2>Start konference za</h2>
+            <div class="countdown" data-countdown>
+                <div class="box">
+                    <span class="value" data-months>00</span>
+                    <span>měsíců</span>
+                </div>
+                <div class="box">
+                    <span class="value" data-days>00</span>
+                    <span>dnů</span>
+                </div>
+                <div class="box">
+                    <span class="value" data-hours>00</span>
+                    <span>hodin</span>
+                </div>
+            </div>
+            <p>Nechte si den volný. Diskuze poběží do 14:00, networking může pokračovat v kavárně Anežka.</p>
+        </div>
+    </section>
 
+    <section class="grid-panel" aria-labelledby="temata">
+        <h2 id="temata">O čem budeme mluvit</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>AI ve státní správě</h3>
+                <p>Jaké úlohy a služby mohou umělou inteligenci bezpečně využít, aby vznikl prostor pro kvalitnější servis občanům.</p>
+            </div>
+            <div class="card">
+                <h3>Blockchain v praxi</h3>
+                <p>Uživatelsky přívětivé scénáře, kde distribuované technologie zvýší důvěru i auditovatelnost veřejných služeb.</p>
+            </div>
+            <div class="card">
+                <h3>Data governance</h3>
+                <p>Jak nastavit správu dat, sdílení a bezpečnost tak, aby stát fungoval předvídatelně a opřel se o kvalitní analytiku.</p>
+            </div>
+            <div class="card">
+                <h3>Zkušenosti z advokacie</h3>
+                <p>Co se při digitální transformaci právních služeb povedlo i nepovedlo a jak tyto lekce uplatnit ve veřejné správě.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="grid-panel" aria-labelledby="pro-koho">
+        <h2 id="pro-koho">Pro koho je akce</h2>
+        <ul>
+            <li>Vedoucí pracovníci veřejné správy, kteří plánují digitální projekty a potřebují inspiraci.</li>
+            <li>Specialisté na data, kybernetickou bezpečnost a AI, kteří chtějí propojit nejlepší postupy napříč sektory.</li>
+            <li>Advokáti a právničky hledající nástroje pro lepší služby klientům a rychlejší práci s informacemi.</li>
+            <li>Byznys a technologické firmy, které chtějí stavět služby respektující potřeby občanů a státu.</li>
+        </ul>
+    </section>
+</main>
+<footer class="footer">
+    <p>Digitální a informační agentura · Chytrá administrativa · 10. 1. 2025</p>
+</footer>
+<script src="script.js"></script>
 </body>
-
 </html>
