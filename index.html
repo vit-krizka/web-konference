@@ -11,7 +11,10 @@
     <div class="nav-bar">
         <div class="logo">
             <div class="pixel-badge" aria-hidden="true"></div>
-            <span>Oddělení standardů digitální transformace</span>
+            <div>
+                <span class="logo-label">Digitální a informační agentura</span>
+                <strong>Oddělení standardů digitální transformace</strong>
+            </div>
         </div>
         <nav aria-label="Hlavní menu">
             <ul>
@@ -22,25 +25,64 @@
                 <li><a href="prakticke.html">Projekty</a></li>
             </ul>
         </nav>
+        <div class="nav-actions">
+            <button class="button ghost" id="snow-toggle" type="button">Sněžit</button>
+        </div>
     </div>
 </header>
 <main>
     <section class="hero">
-        <div>
-            <p>DIA.GOV.CZ · Kompetenční centra OSDT</p>
-            <h1>Oddělení standardů digitální transformace</h1>
-            <p>Rekapitulace činnosti týmu, který nastavuje metodiky, konzultuje projekty a pomáhá státní správě využívat nové technologie v souladu s právem.</p>
-            <p><strong>Vedoucí:</strong> Mgr. Vít Křížka · <strong>Zástupce:</strong> Filip Pokorný</p>
-            <a class="button" href="prakticke.html">Podívat se na projekty</a>
+        <div class="festive-garland" aria-hidden="true"></div>
+        <div class="hero-grid">
+            <div class="hero-content">
+                <p class="eyebrow">DIA.GOV.CZ · Kompetenční centra OSDT</p>
+                <h1>Oddělení standardů digitální transformace</h1>
+                <p class="lead">Rekapitulace činnosti týmu, který nastavuje metodiky, konzultuje projekty a pomáhá státní správě využívat nové technologie v souladu s právem.</p>
+                <p><strong>Vedoucí:</strong> Mgr. Vít Křížka · <strong>Zástupce:</strong> Filip Pokorný</p>
+                <div class="cta">
+                    <a class="button primary" href="prakticke.html">Podívat se na projekty</a>
+                    <button class="button ghost" id="snow-hero" type="button">Sněžit</button>
+                </div>
+                <div class="chips" aria-label="Hodnoty týmu">
+                    <span class="chip">Transparentnost</span>
+                    <span class="chip">Data &amp; AI</span>
+                    <span class="chip">Uživatelská zkušenost</span>
+                </div>
+            </div>
+            <div class="hero-media">
+                <div class="hero-illustration">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=80" alt="Spolupráce týmu u pracovního stolu" loading="lazy">
+                    <div class="floating-card">
+                        <p>Digitální služby, které lidé používají s důvěrou.</p>
+                        <div class="floating-lights" aria-hidden="true"></div>
+                    </div>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <strong>35+</strong>
+                        <span>Metodických výstupů</span>
+                    </div>
+                    <div class="stat">
+                        <strong>12</strong>
+                        <span>Strategických projektů</span>
+                    </div>
+                    <div class="stat">
+                        <strong>24/7</strong>
+                        <span>Podpora pro resorty</span>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="grid-panel">
-            <h2>Naše kompetenční centra</h2>
-            <ul>
-                <li>Konzultace a metodická podpora v oblasti veřejných zakázek a digitálních služeb.</li>
-                <li>Vývoj a governance standardů pro AI, data a eGovernment.</li>
-                <li>Strategické projekty digitální identity a bezpečného přístupu k službám státu.</li>
-            </ul>
-        </div>
+        <div class="snowy-label" aria-hidden="true">❄ Vánoční režim připraven ❄</div>
+    </section>
+
+    <section class="grid-panel" aria-labelledby="temata">
+        <h2 id="temata">Naše kompetenční centra</h2>
+        <ul>
+            <li>Konzultace a metodická podpora v oblasti veřejných zakázek a digitálních služeb.</li>
+            <li>Vývoj a governance standardů pro AI, data a eGovernment.</li>
+            <li>Strategické projekty digitální identity a bezpečného přístupu k službám státu.</li>
+        </ul>
     </section>
 
     <section class="grid-panel" aria-labelledby="temata">
@@ -90,5 +132,6 @@
 <footer class="footer">
     <p>Digitální a informační agentura · Oddělení standardů digitální transformace</p>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
