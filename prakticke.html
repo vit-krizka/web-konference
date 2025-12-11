@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSDT – Projekty</title>
+    <title>DIA · Projekty OSDT</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
     <div class="nav-bar">
         <div class="logo">
-            <div class="pixel-badge" aria-hidden="true"></div>
-            <span>Oddělení standardů digitální transformace</span>
+            <div class="logo-mark" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="logo-text">
+                <p>Digitální a informační agentura</p>
+                <strong>Oddělení standardů digitální transformace</strong>
+            </div>
         </div>
-        <nav aria-label="Hlavní menu">
-            <ul>
-                <li><a href="index.html">Přehled</a></li>
-                <li><a href="program.html">Aktivity</a></li>
-                <li><a href="recnici.html">Tým</a></li>
-                <li><a href="misto.html">Metodika</a></li>
-                <li><a href="prakticke.html">Projekty</a></li>
-            </ul>
-        </nav>
+        <div class="nav-actions">
+            <nav aria-label="Hlavní menu">
+                <ul>
+                    <li><a href="index.html">Přehled</a></li>
+                    <li><a href="program.html">Aktivity</a></li>
+                    <li><a href="recnici.html">Tým</a></li>
+                    <li><a href="misto.html">Metodika</a></li>
+                    <li><a href="prakticke.html">Projekty</a></li>
+                </ul>
+            </nav>
+            <button class="ghost-button" type="button" data-snow-toggle aria-pressed="false">Sněžit</button>
+        </div>
     </div>
 </header>
 <main>
-    <h1 class="page-title">Projekty a přechody</h1>
+    <section class="page-hero">
+        <div>
+            <p class="eyebrow">Projekty a přechody</p>
+            <h1 class="page-title">Klíčové implementace a koordinace</h1>
+            <p class="lead">Koordinujeme přechod na moderní infrastrukturu a pomáháme týmům držet krok s národními i evropskými standardy.</p>
+        </div>
+        <div class="page-visual" aria-hidden="true"></div>
+    </section>
+
     <section class="grid-panel">
         <h2>Přechod z JIP/KAAS na CAAIS</h2>
         <div class="info-grid">
@@ -49,9 +68,13 @@
     </section>
 
     <section class="grid-panel">
-        <h2>A hlavně bylo léto</h2>
-        <p>Období letních měsíců jsme využili k dokončení podkladů, koordinaci projektů a načerpání energie na další práci.</p>
-        <p>Tento prostor je připravený pro fotografie a momentky z týmových setkání.</p>
+        <h2>Momentky z léta</h2>
+        <p>Období letních měsíců jsme využili k dokončení podkladů, koordinaci projektů a načerpání energie na další práci. Připravili jsme prostor pro týmové fotografie, ilustrace i vizualizace budoucích projektů.</p>
+        <div class="image-row" aria-hidden="true">
+            <div class="image-chip">Konzultace</div>
+            <div class="image-chip">Workshop</div>
+            <div class="image-chip">Inovace</div>
+        </div>
     </section>
 </main>
 <footer class="footer">

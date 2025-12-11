@@ -3,32 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSDT – Aktivity</title>
+    <title>DIA · Aktivity OSDT</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
     <div class="nav-bar">
         <div class="logo">
-            <div class="pixel-badge" aria-hidden="true"></div>
-            <span>Oddělení standardů digitální transformace</span>
+            <div class="logo-mark" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="logo-text">
+                <p>Digitální a informační agentura</p>
+                <strong>Oddělení standardů digitální transformace</strong>
+            </div>
         </div>
-        <nav aria-label="Hlavní menu">
-            <ul>
-                <li><a href="index.html">Přehled</a></li>
-                <li><a href="program.html">Aktivity</a></li>
-                <li><a href="recnici.html">Tým</a></li>
-                <li><a href="misto.html">Metodika</a></li>
-                <li><a href="prakticke.html">Projekty</a></li>
-            </ul>
-        </nav>
+        <div class="nav-actions">
+            <nav aria-label="Hlavní menu">
+                <ul>
+                    <li><a href="index.html">Přehled</a></li>
+                    <li><a href="program.html">Aktivity</a></li>
+                    <li><a href="recnici.html">Tým</a></li>
+                    <li><a href="misto.html">Metodika</a></li>
+                    <li><a href="prakticke.html">Projekty</a></li>
+                </ul>
+            </nav>
+            <button class="ghost-button" type="button" data-snow-toggle aria-pressed="false">Sněžit</button>
+        </div>
     </div>
 </header>
 <main>
-    <h1 class="page-title">Aktivity a výstupy</h1>
+    <section class="page-hero">
+        <div>
+            <p class="eyebrow">Aktivity a výstupy</p>
+            <h1 class="page-title">Co přinášíme nad rámec konzultací</h1>
+            <p class="lead">Spojujeme metodiku, komunitu a inovace, aby digitální stát měl pevné základy a inspiraci z praxe.</p>
+        </div>
+        <div class="page-visual" aria-hidden="true"></div>
+    </section>
+
     <section class="grid-panel">
         <h2>Mimo konzultační činnosti – část 1</h2>
-        <ul>
+        <ul class="styled-list">
             <li>Účast na kulatém stole Úřadu vlády k veřejným zakázkám na ICT.</li>
             <li>Aktivní účast ve skupině pro veřejné zakázky v ICT – Soutěžní dialog.</li>
             <li>Prezentace na konferencích: Senát PČR, Navigace světem digitalizace, Trutnov (AI), Mikulov (eGovernment), Praha (Digitální přívětivá legislativa).</li>
@@ -77,7 +96,13 @@
     </section>
 
     <section class="grid-panel">
-        <h2>Proběhlé a probíhající činnosti členů oddělení</h2>
+        <div class="section-header">
+            <div>
+                <p class="eyebrow">Přehled aktivit</p>
+                <h2>Proběhlé a probíhající činnosti členů oddělení</h2>
+            </div>
+            <div class="header-illustration" aria-hidden="true"></div>
+        </div>
         <table class="table" aria-label="Probíhající činnosti">
             <thead>
                 <tr>

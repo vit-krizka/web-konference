@@ -3,48 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSDT – Přehled</title>
+    <title>DIA · Oddělení standardů digitální transformace</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 <header>
     <div class="nav-bar">
         <div class="logo">
-            <div class="pixel-badge" aria-hidden="true"></div>
-            <span>Oddělení standardů digitální transformace</span>
+            <div class="logo-mark" aria-hidden="true">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="logo-text">
+                <p>Digitální a informační agentura</p>
+                <strong>Oddělení standardů digitální transformace</strong>
+            </div>
         </div>
-        <nav aria-label="Hlavní menu">
-            <ul>
-                <li><a href="index.html">Přehled</a></li>
-                <li><a href="program.html">Aktivity</a></li>
-                <li><a href="recnici.html">Tým</a></li>
-                <li><a href="misto.html">Metodika</a></li>
-                <li><a href="prakticke.html">Projekty</a></li>
-            </ul>
-        </nav>
+        <div class="nav-actions">
+            <nav aria-label="Hlavní menu">
+                <ul>
+                    <li><a href="index.html">Přehled</a></li>
+                    <li><a href="program.html">Aktivity</a></li>
+                    <li><a href="recnici.html">Tým</a></li>
+                    <li><a href="misto.html">Metodika</a></li>
+                    <li><a href="prakticke.html">Projekty</a></li>
+                </ul>
+            </nav>
+            <button class="ghost-button" type="button" data-snow-toggle aria-pressed="false">Sněžit</button>
+        </div>
     </div>
 </header>
 <main>
     <section class="hero">
-        <div>
-            <p>DIA.GOV.CZ · Kompetenční centra OSDT</p>
-            <h1>Oddělení standardů digitální transformace</h1>
-            <p>Rekapitulace činnosti týmu, který nastavuje metodiky, konzultuje projekty a pomáhá státní správě využívat nové technologie v souladu s právem.</p>
-            <p><strong>Vedoucí:</strong> Mgr. Vít Křížka · <strong>Zástupce:</strong> Filip Pokorný</p>
-            <a class="button" href="prakticke.html">Podívat se na projekty</a>
+        <div class="hero-content">
+            <div class="pill">DIA.GOV.CZ · Kompetenční centra OSDT</div>
+            <h1>Moderní standardy pro digitální stát</h1>
+            <p>Pomáháme veřejné správě navrhovat digitální služby, technologie a zakázky tak, aby byly bezpečné, inkluzivní a v souladu s právem. Nastavujeme metodiky, konzultujeme projekty a přinášíme inspiraci z domova i zahraničí.</p>
+            <p class="lead"><strong>Vedoucí:</strong> Mgr. Vít Křížka · <strong>Zástupce:</strong> Filip Pokorný</p>
+            <div class="cta-row">
+                <a class="button" href="prakticke.html">Podívat se na projekty</a>
+                <a class="ghost-button" href="program.html">Zobrazit aktivity</a>
+            </div>
+            <div class="stats">
+                <div class="stat">
+                    <span class="value">15+</span>
+                    <span class="label">strategických konzultací</span>
+                </div>
+                <div class="stat">
+                    <span class="value">5</span>
+                    <span class="label">kompetenčních center</span>
+                </div>
+                <div class="stat">
+                    <span class="value">AI</span>
+                    <span class="label">compliance a standardy</span>
+                </div>
+            </div>
         </div>
-        <div class="grid-panel">
-            <h2>Naše kompetenční centra</h2>
-            <ul>
-                <li>Konzultace a metodická podpora v oblasti veřejných zakázek a digitálních služeb.</li>
-                <li>Vývoj a governance standardů pro AI, data a eGovernment.</li>
-                <li>Strategické projekty digitální identity a bezpečného přístupu k službám státu.</li>
-            </ul>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="badge">DIA</div>
+            <div class="chip">Digital · Secure · Trusted</div>
+            <div class="rings"></div>
+            <div class="floating-card">
+                <p>Evropská digitální identita</p>
+                <span>eIDAS 2.0 · bezpečný přístup</span>
+            </div>
+            <div class="floating-card secondary">
+                <p>AI Compliance</p>
+                <span>Posouzení souladu a metodiky</span>
+            </div>
         </div>
     </section>
 
     <section class="grid-panel" aria-labelledby="temata">
-        <h2 id="temata">Hlavní oblasti činnosti</h2>
+        <div class="section-header">
+            <div>
+                <p class="eyebrow">Co řešíme</p>
+                <h2 id="temata">Hlavní oblasti činnosti</h2>
+            </div>
+            <div class="header-illustration" aria-hidden="true"></div>
+        </div>
         <div class="cards">
             <div class="card">
                 <h3>Konzultace veřejných zakázek</h3>
@@ -52,7 +91,7 @@
             </div>
             <div class="card">
                 <h3>AI Compliance</h3>
-                <p>Nový produkt: odborné právní posouzení souladu integrace AI s evropskou legislativou, zejména AI Act.</p>
+                <p>Odborné právní posouzení souladu integrace AI s evropskou legislativou, zejména AI Act.</p>
             </div>
             <div class="card">
                 <h3>Evropská digitální identita</h3>
@@ -66,7 +105,13 @@
     </section>
 
     <section class="grid-panel" aria-labelledby="udalosti">
-        <h2 id="udalosti">Co děláme mimo konzultace</h2>
+        <div class="section-header">
+            <div>
+                <p class="eyebrow">Komunita a inspirace</p>
+                <h2 id="udalosti">Co děláme mimo konzultace</h2>
+            </div>
+            <div class="header-illustration" aria-hidden="true"></div>
+        </div>
         <div class="cards">
             <div class="card">
                 <h3>Participace a vzdělávání</h3>
