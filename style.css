@@ -1,4 +1,4 @@
-/* Pixel-art inspired styling for Chytrá administrativa */
+/* Pixel-art inspired styling for časový trenažér */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
@@ -36,6 +36,11 @@ a {
     text-decoration: none;
 }
 
+a:hover,
+a:focus {
+    text-decoration: underline;
+}
+
 header {
     background: var(--sky);
     border-bottom: var(--pixel-border) solid var(--ink);
@@ -50,7 +55,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 16px 24px;
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -99,7 +104,7 @@ nav a:focus {
 }
 
 main {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 24px auto;
     padding: 0 24px 48px;
 }
@@ -107,6 +112,7 @@ main {
 .hero {
     display: grid;
     gap: 16px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     background: var(--mint);
     border: var(--pixel-border) solid var(--ink);
     box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
@@ -148,21 +154,13 @@ main {
     font-size: 18px;
 }
 
-.grid-panel ul {
-    padding-left: 18px;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 16px;
-}
-
 .card {
     background: var(--paper);
     border: var(--pixel-border) solid var(--ink);
     box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
     padding: 16px;
+    position: relative;
+    z-index: 1;
 }
 
 .card h3 {
@@ -170,26 +168,172 @@ main {
     font-size: 14px;
 }
 
-.countdown {
-    display: flex;
-    gap: 12px;
-    margin-top: 16px;
-    flex-wrap: wrap;
+.trainer {
+    position: relative;
+    z-index: 1;
 }
 
-.countdown .box {
+.question-meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
     background: var(--amber);
     border: var(--pixel-border) solid var(--ink);
     box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
-    padding: 14px 16px;
-    text-align: center;
-    min-width: 120px;
+    font-size: 10px;
 }
 
-.countdown .value {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 8px;
+.clock-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 12px 0;
+}
+
+.analog-clock,
+.digital-display {
+    background: var(--paper);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+}
+
+.analog-clock {
+    width: 240px;
+    height: 240px;
+    border-radius: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: radial-gradient(circle at center, #fff 40%, #e2e8f0 100%);
+}
+
+.analog-clock::after {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: var(--pixel-border) dashed var(--ink);
+    border-radius: 12px;
+    opacity: 0.6;
+}
+
+.hand {
+    position: absolute;
+    background: var(--ink);
+    transform-origin: center 90%;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 0) rotate(0deg);
+    border-radius: 4px;
+}
+
+.hand.hour {
+    width: 10px;
+    height: 70px;
+}
+
+.hand.minute {
+    width: 6px;
+    height: 100px;
+    background: var(--sky);
+}
+
+.center-dot {
+    width: 18px;
+    height: 18px;
+    background: var(--ink);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 0 var(--pixel-border) var(--paper);
+}
+
+.digital-display {
+    min-width: 220px;
+    min-height: 120px;
+    display: grid;
+    place-items: center;
+    font-size: 32px;
+    letter-spacing: 2px;
+    padding: 16px;
+}
+
+.prompt {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin: 16px 0;
+}
+
+.option {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    background: var(--paper);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.option:hover,
+.option:focus {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--pixel-border) + 2px) calc(var(--pixel-border) + 2px) 0 var(--ink);
+}
+
+.option.correct {
+    background: var(--mint);
+}
+
+.option.incorrect {
+    background: #fecdd3;
+}
+
+.status {
+    min-height: 24px;
+    font-size: 12px;
+}
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 16px;
+    background: var(--amber);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.button:hover,
+.button:focus {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--pixel-border) + 2px) calc(var(--pixel-border) + 2px) 0 var(--ink);
 }
 
 .footer {
@@ -201,69 +345,10 @@ main {
     border-top: var(--pixel-border) solid var(--ink);
 }
 
-.page-title {
-    font-size: 22px;
-    margin-bottom: 12px;
-}
-
-.listing {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 16px;
-}
-
-.listing article {
-    background: var(--paper);
-    border: var(--pixel-border) solid var(--ink);
-    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
-    padding: 16px;
-}
-
-.tag {
-    display: inline-block;
-    background: var(--mint);
-    border: var(--pixel-border) solid var(--ink);
-    padding: 4px 8px;
-    font-size: 10px;
-    margin-right: 6px;
-}
-
 .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 16px;
-}
-
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-}
-
-.table th,
-.table td {
-    border: var(--pixel-border) solid var(--ink);
-    padding: 10px;
-    background: var(--paper);
-}
-
-.table th {
-    background: var(--sky);
-}
-
-.button {
-    display: inline-block;
-    padding: 12px 16px;
-    background: var(--amber);
-    border: var(--pixel-border) solid var(--ink);
-    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
-    font-size: 12px;
-}
-
-.button:hover,
-.button:focus {
-    transform: translate(-2px, -2px);
-    box-shadow: calc(var(--pixel-border) + 2px) calc(var(--pixel-border) + 2px) 0 var(--ink);
 }
 
 @media (max-width: 720px) {
@@ -274,5 +359,14 @@ main {
     .nav-bar {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .analog-clock {
+        width: 200px;
+        height: 200px;
+    }
+
+    .digital-display {
+        min-width: 180px;
     }
 }
