@@ -1,4 +1,4 @@
-/* Pixel-art inspired styling for Chytrá administrativa */
+/* Pixel-art inspired styling for výuku času */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 :root {
@@ -10,6 +10,8 @@
     --grid: rgba(14, 165, 233, 0.2);
     --pixel-border: 4px;
     --font-body: 'Press Start 2P', system-ui, sans-serif;
+    --success: #22c55e;
+    --danger: #ef4444;
 }
 
 * {
@@ -52,6 +54,7 @@ header {
     padding: 16px 24px;
     max-width: 1200px;
     margin: 0 auto;
+    gap: 12px;
 }
 
 .logo {
@@ -170,28 +173,6 @@ main {
     font-size: 14px;
 }
 
-.countdown {
-    display: flex;
-    gap: 12px;
-    margin-top: 16px;
-    flex-wrap: wrap;
-}
-
-.countdown .box {
-    background: var(--amber);
-    border: var(--pixel-border) solid var(--ink);
-    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
-    padding: 14px 16px;
-    text-align: center;
-    min-width: 120px;
-}
-
-.countdown .value {
-    display: block;
-    font-size: 22px;
-    margin-bottom: 8px;
-}
-
 .footer {
     background: var(--ink);
     color: var(--paper);
@@ -258,12 +239,208 @@ main {
     border: var(--pixel-border) solid var(--ink);
     box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
     font-size: 12px;
+    cursor: pointer;
 }
 
 .button:hover,
 .button:focus {
     transform: translate(-2px, -2px);
     box-shadow: calc(var(--pixel-border) + 2px) calc(var(--pixel-border) + 2px) 0 var(--ink);
+}
+
+.button.ghost {
+    background: var(--paper);
+}
+
+.practice .panel-header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 12px;
+}
+
+.arena-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 16px;
+    align-items: start;
+}
+
+.clock-wrapper {
+    background: var(--mint);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+    padding: 16px;
+}
+
+.prompt {
+    margin-top: 0;
+    font-size: 14px;
+}
+
+.clock-frame {
+    display: grid;
+    place-items: center;
+    padding: 12px;
+    background: var(--paper);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+}
+
+.clock-face {
+    position: relative;
+    width: 240px;
+    height: 240px;
+    border: var(--pixel-border) solid var(--ink);
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #fff 60%, var(--mint) 60%, var(--mint) 100%);
+    box-shadow: inset 0 0 0 10px var(--paper), var(--pixel-border) var(--pixel-border) 0 var(--ink);
+}
+
+.clock-face::before {
+    content: "";
+    position: absolute;
+    inset: 20px;
+    background-image: repeating-linear-gradient(0deg, transparent 0 10px, rgba(15, 23, 42, 0.05) 10px 20px),
+        repeating-linear-gradient(90deg, transparent 0 10px, rgba(15, 23, 42, 0.05) 10px 20px);
+    border-radius: 50%;
+}
+
+.hour-hand,
+.minute-hand {
+    position: absolute;
+    width: 6px;
+    background: var(--ink);
+    left: 50%;
+    transform-origin: center 90%;
+    border-radius: 6px;
+}
+
+.hour-hand {
+    height: 70px;
+    top: 50px;
+}
+
+.minute-hand {
+    height: 90px;
+    top: 30px;
+    background: var(--sky);
+}
+
+.center-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: var(--amber);
+    border: var(--pixel-border) solid var(--ink);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.digital {
+    display: none;
+    font-size: 36px;
+    letter-spacing: 6px;
+}
+
+.clock-frame[data-mode="digital"] .clock-face {
+    display: none;
+}
+
+.clock-frame[data-mode="digital"] .digital {
+    display: block;
+}
+
+.controls {
+    display: grid;
+    gap: 12px;
+    background: var(--paper);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+    padding: 16px;
+}
+
+.tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+
+.option {
+    text-align: left;
+    padding: 12px;
+    background: var(--mint);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.option:hover,
+.option:focus {
+    transform: translate(-2px, -2px);
+    box-shadow: calc(var(--pixel-border) + 2px) calc(var(--pixel-border) + 2px) 0 var(--ink);
+}
+
+.option.correct {
+    outline: var(--pixel-border) solid var(--success);
+}
+
+.option.wrong {
+    outline: var(--pixel-border) solid var(--danger);
+}
+
+.feedback {
+    min-height: 24px;
+    font-size: 12px;
+}
+
+.feedback.success {
+    color: var(--success);
+}
+
+.feedback.error {
+    color: var(--danger);
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.score {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.score .box {
+    background: var(--sky);
+    border: var(--pixel-border) solid var(--ink);
+    box-shadow: var(--pixel-border) var(--pixel-border) 0 var(--ink);
+    padding: 12px 16px;
+    text-align: center;
+    min-width: 120px;
+}
+
+.score .value {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.score .label {
+    font-size: 10px;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 720px) {
@@ -274,5 +451,10 @@ main {
     .nav-bar {
         flex-direction: column;
         gap: 12px;
+    }
+
+    .clock-face {
+        width: 180px;
+        height: 180px;
     }
 }
