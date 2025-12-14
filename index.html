@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OSDT – Přehled</title>
+    <title>Pixelové hodiny</title>
     <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
 <header>
     <div class="nav-bar">
         <div class="logo">
             <div class="pixel-badge" aria-hidden="true"></div>
-            <span>Oddělení standardů digitální transformace</span>
+            <span>Pixelové hodiny</span>
         </div>
         <nav aria-label="Hlavní menu">
             <ul>
-                <li><a href="index.html">Přehled</a></li>
-                <li><a href="program.html">Aktivity</a></li>
-                <li><a href="recnici.html">Tým</a></li>
-                <li><a href="misto.html">Metodika</a></li>
-                <li><a href="prakticke.html">Projekty</a></li>
+                <li><a href="index.html">Procvičování</a></li>
+                <li><a href="program.html">Plán lekcí</a></li>
+                <li><a href="recnici.html">Scénáře</a></li>
+                <li><a href="misto.html">Tipy</a></li>
+                <li><a href="prakticke.html">Materiály</a></li>
             </ul>
         </nav>
     </div>
@@ -27,68 +28,88 @@
 <main>
     <section class="hero">
         <div>
-            <p>DIA.GOV.CZ · Kompetenční centra OSDT</p>
-            <h1>Oddělení standardů digitální transformace</h1>
-            <p>Rekapitulace činnosti týmu, který nastavuje metodiky, konzultuje projekty a pomáhá státní správě využívat nové technologie v souladu s právem.</p>
-            <p><strong>Vedoucí:</strong> Mgr. Vít Křížka · <strong>Zástupce:</strong> Filip Pokorný</p>
-            <a class="button" href="prakticke.html">Podívat se na projekty</a>
+            <p>Pixel-artové učení času</p>
+            <h1>Procvičování ručičkových i digitálních hodin</h1>
+            <p>Žák vidí náhodně ručičkové nebo digitální hodiny a vybírá správnou odpověď z možností A–D. Střídáme zápisy s čísly i českými výrazy: čtvrť, půl, tři čtvrtě a celou.</p>
+            <a class="button" href="#arena">Začít procvičovat</a>
         </div>
         <div class="grid-panel">
-            <h2>Naše kompetenční centra</h2>
+            <h2>Co trénujeme</h2>
             <ul>
-                <li>Konzultace a metodická podpora v oblasti veřejných zakázek a digitálních služeb.</li>
-                <li>Vývoj a governance standardů pro AI, data a eGovernment.</li>
-                <li>Strategické projekty digitální identity a bezpečného přístupu k službám státu.</li>
+                <li>Rozlišení mezi ručičkovým ciferníkem a digitálním zápisem.</li>
+                <li>České vyjadřování času: celá, čtvrť, půl a tři čtvrtě.</li>
+                <li>Rychlé rozhodování pomocí čtyř možností A–D.</li>
             </ul>
         </div>
     </section>
 
-    <section class="grid-panel" aria-labelledby="temata">
-        <h2 id="temata">Hlavní oblasti činnosti</h2>
-        <div class="cards">
-            <div class="card">
-                <h3>Konzultace veřejných zakázek</h3>
-                <p>Podpora resortů při nastavování zadání, hodnoticích kritérií a ekonomické výhodnosti s důrazem na digitální služby.</p>
+    <section id="arena" class="grid-panel practice" aria-labelledby="arena-title">
+        <div class="panel-header">
+            <h2 id="arena-title">Herní aréna</h2>
+            <p>Ručičkové i digitální otázky na střídačku, bez rozlišování dopoledne/odpoledne.</p>
+        </div>
+        <div class="arena-layout">
+            <div class="clock-wrapper" aria-live="polite">
+                <p class="prompt">Kolik je hodin?</p>
+                <div class="clock-frame" data-mode="analog" aria-label="Zobrazení času">
+                    <div class="clock-face" role="img" aria-label="Ručičkové hodiny">
+                        <div class="hour-hand"></div>
+                        <div class="minute-hand"></div>
+                        <div class="center-dot"></div>
+                    </div>
+                    <div class="digital" aria-label="Digitální hodiny"></div>
+                </div>
             </div>
-            <div class="card">
-                <h3>AI Compliance</h3>
-                <p>Nový produkt: odborné právní posouzení souladu integrace AI s evropskou legislativou, zejména AI Act.</p>
-            </div>
-            <div class="card">
-                <h3>Evropská digitální identita</h3>
-                <p>Podpora soutěžního dialogu pro klientskou část, kvalifikační fázi i adaptační legislativu k eIDAS 2.0.</p>
-            </div>
-            <div class="card">
-                <h3>CAAIS a přechod z JIP/KAAS</h3>
-                <p>Příprava akčního plánu, plynulý přechod AIS do CAAIS a koordinace provozu v letech 2025–2026.</p>
+            <div class="controls">
+                <div class="tags">
+                    <span class="tag" data-label="typ">—</span>
+                    <span class="tag" data-label="zapis">—</span>
+                </div>
+                <div class="options" role="group" aria-label="Možnosti odpovědi">
+                    <button class="option" data-choice="A"></button>
+                    <button class="option" data-choice="B"></button>
+                    <button class="option" data-choice="C"></button>
+                    <button class="option" data-choice="D"></button>
+                </div>
+                <div class="feedback" aria-live="polite"></div>
+                <div class="actions">
+                    <button class="button" id="next-question">Další čas</button>
+                    <button class="button ghost" id="reveal">Ukázat řešení</button>
+                </div>
+                <div class="score">
+                    <div class="box">
+                        <span class="value" data-score="correct">0</span>
+                        <span class="label">Správně</span>
+                    </div>
+                    <div class="box">
+                        <span class="value" data-score="total">0</span>
+                        <span class="label">Pokusů</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="grid-panel" aria-labelledby="udalosti">
-        <h2 id="udalosti">Co děláme mimo konzultace</h2>
+    <section class="grid-panel" aria-labelledby="jak-na-to">
+        <h2 id="jak-na-to">Jak na to</h2>
         <div class="cards">
             <div class="card">
-                <h3>Participace a vzdělávání</h3>
-                <p>Účast na kulatých stolech Úřadu vlády, konferencích Senátu PČR, Navigace světem digitalizace, Trutnov AI, Mikulov eGovernment či Digitální přívětivá legislativa.</p>
+                <h3>Střídej typy otázek</h3>
+                <p>Analogový ciferník ukazuje stejný čas jako digitální. Aplikace náhodně volí, co žák uvidí, aby trénoval převod oběma směry.</p>
             </div>
             <div class="card">
-                <h3>Portál kompetenčních center</h3>
-                <p>Rozvoj eAkademie, příprava kurzů pro prostorová data a ISSI a tvorba e-learningových materiálů, včetně kalendáře akcí eGovernmentu.</p>
+                <h3>České fráze</h3>
+                <p>Možnosti A–D využívají slovní spojení čtvrť, půl, tři čtvrtě a celou. Učitel může upozornit, že neřešíme dopoledne ani odpoledne.</p>
             </div>
             <div class="card">
-                <h3>Metodická činnost</h3>
-                <p>Metodika vendor lock-in, hodnoticí kritéria, harmonogramy realizace, referenční zakázky, životní cyklus a karty ICT profesí včetně agilního vývoje.</p>
-            </div>
-            <div class="card">
-                <h3>Mezinárodní spolupráce</h3>
-                <p>Setkání s delegací z Gruzie k využití AI, tvorba katalogu AI use case a sdílení know-how pro posílení inovativnosti.</p>
+                <h3>Okamžitá zpětná vazba</h3>
+                <p>Po kliknutí vidí žák, zda trefil správnou odpověď. Tlačítko „Ukázat řešení“ zvýrazní správnou možnost a napoví zápis v druhém formátu.</p>
             </div>
         </div>
     </section>
 </main>
 <footer class="footer">
-    <p>Digitální a informační agentura · Oddělení standardů digitální transformace</p>
+    <p>Pixelové hodiny – hra pro nácvik čtení času</p>
 </footer>
 </body>
 </html>
